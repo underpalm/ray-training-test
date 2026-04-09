@@ -1,0 +1,41 @@
+[2026-04-08 13:19:11,987 I 94047 4463571] core_worker_process.cc:795: Constructing CoreWorkerProcess. pid: 94047
+[2026-04-08 13:19:11,991 I 94047 4463571] event.cc:499: Ray Event initialized for CORE_WORKER
+[2026-04-08 13:19:11,991 I 94047 4463571] event.cc:499: Ray Event initialized for EXPORT_TASK
+[2026-04-08 13:19:11,991 I 94047 4463571] event.cc:332: Set ray event level to warning
+[2026-04-08 13:19:12,997 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 1, num_retries = 10)
+[2026-04-08 13:19:14,002 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 2, num_retries = 10)
+[2026-04-08 13:19:15,008 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 3, num_retries = 10)
+[2026-04-08 13:19:16,013 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 4, num_retries = 10)
+[2026-04-08 13:19:17,017 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 5, num_retries = 10)
+[2026-04-08 13:19:18,023 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 6, num_retries = 10)
+[2026-04-08 13:19:19,027 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 7, num_retries = 10)
+[2026-04-08 13:19:20,032 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 8, num_retries = 10)
+[2026-04-08 13:19:21,035 I 94047 4463571] client_connection.cc:82: Retrying to connect to socket for endpoint tcp://127.0.0.1:62409 (num_attempts = 9, num_retries = 10)
+[2026-04-08 13:19:22,062 C 94047 4463571] raylet_ipc_client.cc:85: Failed to connect to socket at address:tcp://127.0.0.1:62409
+*** StackTrace Information ***
+0   _raylet.so                          0x00000001048b3f7c _ZN3raylsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_10StackTraceE + 84 ray::operator<<()
+1   _raylet.so                          0x00000001048b7858 _ZN3ray6RayLogD2Ev + 84 ray::RayLog::~RayLog()
+2   _raylet.so                          0x0000000103cefce0 _ZN3ray3ipc15RayletIpcClientC2ER23instrumented_io_contextRKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEEix + 388 ray::ipc::RayletIpcClient::RayletIpcClient()
+3   _raylet.so                          0x0000000103bb5344 _ZN3ray4core21CoreWorkerProcessImpl16CreateCoreWorkerENS0_17CoreWorkerOptionsERKNS_8WorkerIDE + 1564 ray::core::CoreWorkerProcessImpl::CreateCoreWorker()
+4   _raylet.so                          0x0000000103bbad80 _ZN3ray4core21CoreWorkerProcessImplC2ERKNS0_17CoreWorkerOptionsE + 4452 ray::core::CoreWorkerProcessImpl::CoreWorkerProcessImpl()
+5   _raylet.so                          0x0000000103bb3da0 _ZN3ray4core17CoreWorkerProcess10InitializeERKNS0_17CoreWorkerOptionsE + 56 ray::core::CoreWorkerProcess::Initialize()
+6   _raylet.so                          0x0000000103a8fa80 _ZL45__pyx_pf_3ray_7_raylet_10CoreWorker___cinit__P34__pyx_obj_3ray_7_raylet_CoreWorkerP7_objectS2_S2_P29__pyx_obj_3ray_7_raylet_JobIDP40__pyx_obj_3ray_7_raylet_GcsClientOptionsS2_S2_S2_S2_S2_S2_S2_S2_P32__pyx_obj_3ray_7_raylet_WorkerIDS2_S2_S2_S2_S2_S2_ + 5776 __pyx_pf_3ray_7_raylet_10CoreWorker___cinit__()
+7   _raylet.so                          0x0000000103a45e88 _ZL37__pyx_tp_new_3ray_7_raylet_CoreWorkerP11_typeobjectP7_objectS2_ + 2100 __pyx_tp_new_3ray_7_raylet_CoreWorker()
+8   python3.11                          0x00000001001b36d4 type_call + 84 type_call
+9   python3.11                          0x0000000100275b68 _PyEval_EvalFrameDefault + 191216 _PyEval_EvalFrameDefault
+10  python3.11                          0x00000001001283c4 _PyFunction_Vectorcall + 472 _PyFunction_Vectorcall
+11  python3.11                          0x0000000100279fe4 _PyEval_EvalFrameDefault + 208748 _PyEval_EvalFrameDefault
+12  python3.11                          0x00000001001283c4 _PyFunction_Vectorcall + 472 _PyFunction_Vectorcall
+13  python3.11                          0x0000000100279fe4 _PyEval_EvalFrameDefault + 208748 _PyEval_EvalFrameDefault
+14  python3.11                          0x00000001002449ac _PyEval_Vector + 456 _PyEval_Vector
+15  python3.11                          0x0000000100244750 PyEval_EvalCode + 244 PyEval_EvalCode
+16  python3.11                          0x00000001002e0330 run_mod + 144 run_mod
+17  python3.11                          0x00000001002e011c pyrun_file + 140 pyrun_file
+18  python3.11                          0x00000001002dfb50 _PyRun_SimpleFileObject + 268 _PyRun_SimpleFileObject
+19  python3.11                          0x00000001002df4c4 _PyRun_AnyFileObject + 224 _PyRun_AnyFileObject
+20  python3.11                          0x0000000100302498 pymain_run_file_obj + 260 pymain_run_file_obj
+21  python3.11                          0x0000000100301dd0 pymain_run_file + 72 pymain_run_file
+22  python3.11                          0x00000001003015c0 Py_RunMain + 1312 Py_RunMain
+23  python3.11                          0x00000001000be72c main + 60 main
+24  dyld                                0x000000019897dd54 start + 7184 start
+
