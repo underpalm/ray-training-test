@@ -26,7 +26,7 @@ def gpu_training():
     loss_fn = torch.nn.CrossEntropyLoss()
 
     start = time.time()
-    for epoch in range(100):
+    for epoch in range(150):
         x = torch.randn(512, 100, device=device)
         y = torch.randint(0, 10, (512,), device=device)
         optimizer.zero_grad()
